@@ -1,5 +1,5 @@
 FROM ubuntu:14.04.3
-MAINTAINER Hoa Nguyen <hoa.nguyenmanh@tiki.vn>
+MAINTAINER Pisun2
 
 # Ensure UTF-8
 RUN locale-gen en_US.UTF-8
@@ -74,12 +74,12 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Add php test file
-COPY ./info.php /src/public/index.php
+COPY ./info.php /src/index.php
 
 # Start Supervisord
-COPY ./start.sh /start.sh
-RUN chmod 755 /start.sh
+#COPY ./start.sh /start.sh
+#RUN chmod 755 /start.sh
 
 EXPOSE 80 443
 
-CMD ["/bin/bash", "/start.sh"]
+#CMD ["/bin/bash", "/start.sh"]

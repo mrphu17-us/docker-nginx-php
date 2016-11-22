@@ -77,9 +77,9 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 COPY ./info.php /src/index.php
 
 # Start Supervisord
-#COPY ./start.sh /start.sh
-#RUN chmod 755 /start.sh
+COPY ./start.sh /start.sh
+RUN chmod 755 /start.sh
 
 EXPOSE 80 443
 
-#CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "/start.sh"]
